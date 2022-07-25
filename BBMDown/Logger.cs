@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.CommandLine;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.CommandLine;
 
 namespace BBMDown
 {
@@ -16,19 +11,27 @@ namespace BBMDown
             _console = console;
         }
 
-        public void Info(string message)
+        public void Info(string? message)
         {
+            if (message == null) return;
             _console.WriteLine($"[{DateTime.Now}][Info] {message}");
         }
 
-        public void Warn(string message)
+        public void Warn(string? message)
         {
+            if (message == null) return;
             _console.WriteLine($"[{DateTime.Now}][Warn] {message}");
         }
 
-        public void Exception(Exception exception, string message)
+        public void Error(string? message)
         {
-            _console.WriteLine($"[{DateTime.Now}][Exception] 发生了一个异常: {message}");
+            if (message == null) return;
+            _console.WriteLine($"[{DateTime.Now}][Error] {message}");
+        }
+
+        public void Exception(Exception exception, string? message)
+        {
+            _console.WriteLine($"[{DateTime.Now}][Exception] 发生了一个异常{(message != null ? ": " + message : "")}");
             _console.WriteLine(exception.ToString());
         }
     }
