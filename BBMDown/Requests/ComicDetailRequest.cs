@@ -11,7 +11,7 @@ namespace BBMDown.Requests
         public record Payload(int ComicId);
 
         public ComicDetailRequest(int comicId) : base(
-            new Uri("https://manga.bilibili.com/twirp/comic.v1.Comic/ComicDetail"),
+            new Uri("https://manga.bilibili.com/twirp/comic.v1.Comic/ComicDetail?device=pc&platform=web"),
             HttpMethod.Post,
             new Payload(comicId))
         { }
