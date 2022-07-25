@@ -48,6 +48,14 @@ namespace BBMDown
             result.StatusCode = response.StatusCode;
             return result;
         }
+        public static async Task DownloadFile(string url, Stream outStream)
+        {
+            var message = new HttpRequestMessage(HttpMethod.Get, url);
+            var response = await _client.SendAsync(message);
+            response.EnsureSuccessStatusCode();
+            await response.Content.CopyToAsync(outStream);
+        }
+
         public static void SetCookie(string key, string value)
         {
             Cookies.Add(new Cookie(key, value, "/", mangaUri.ToString()));
