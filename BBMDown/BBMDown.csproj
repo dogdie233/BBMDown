@@ -6,6 +6,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>BBMDown</ToolCommandName>
+    <Description>A bilibili manga downloader. 一个哔哩哔哩漫画下载器</Description>
+    <PackageProjectUrl>https://github.com/dogdie233/BBMDown</PackageProjectUrl>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

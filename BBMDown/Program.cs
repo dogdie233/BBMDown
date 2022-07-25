@@ -75,6 +75,7 @@ void HandleRootCommand(RootCommandOptions options, IConsole console)
     if (options.EpString == "all")
     {
         downloadEps = epList.Where(ep => !ep.IsLocked || ep.IsInFree).ToList();
+        downloadEpOrder = Enumerable.Range(1, downloadEps.Count).ToList();
     }
     
     logger.Info($"总计 {downloadEps.Count} 个章节准备下载" + BuildEpListString(downloadEps));
@@ -107,7 +108,7 @@ void HandleRootCommand(RootCommandOptions options, IConsole console)
         {
             var token = tokens.Data[j];
             var path = directory + '/' + (j + 1).ToString().PadLeft(3, '0') + token.Url.Substring(token.Url.LastIndexOf('.'), token.Url.Length - token.Url.LastIndexOf('.'));
-            if (File.Exists(path)) continue;
+            if (File.Exists(path) && new FileInfo(path).Length != 0) continue;
             logger.Info($"    正在下载{j + 1}/{tokens.Data.Length}");
             using (var fs = File.Create(path))
             {

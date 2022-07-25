@@ -17,7 +17,6 @@ namespace BBMDown
             NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString,
             
         };
-        public static readonly Uri mangaUri = new Uri("https://manga.bilibili.com/");
 
         public static CookieContainer Cookies { get; private set; }
 
@@ -58,7 +57,7 @@ namespace BBMDown
 
         public static void SetCookie(string key, string value)
         {
-            Cookies.Add(new Cookie(key, value, "/", mangaUri.ToString()));
+            Cookies.Add(new Cookie(key, value, "/", "manga.bilibili.com"));
         }
         public static void SetSessdata(string value) => SetCookie("SESSDATA", value);
     }
