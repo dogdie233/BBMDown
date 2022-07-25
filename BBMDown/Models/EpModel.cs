@@ -19,7 +19,10 @@ namespace BBMDown.Models
         [JsonPropertyName("is_in_free")] public bool IsInFree { get; set; } = false;
         [JsonPropertyName("is_locked")] public bool IsLocked { get; set; } = false;
         [JsonPropertyName("like_count")] public int LikeCount { get; set; }
-        [JsonPropertyName("ord")] public int Order { get; set; }
+        /// <summary>
+        /// 0.5的概念是谁发明的
+        /// </summary>
+        [JsonPropertyName("ord")] public float Order { get; set; }
         [JsonPropertyName("pay_gold")] public int PayGold { get; set; }
         [JsonPropertyName("pay_mode")] public int PayMode { get; set; }
         public string Progress { get; set; } = string.Empty;
