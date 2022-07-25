@@ -56,5 +56,65 @@ namespace BBMDownTest
 			// assert
 			Assert.IsTrue(Enumerable.SequenceEqual(expect, result));
 		}
-	}
+
+        [TestMethod]
+		public void TryGetComicIdByLink_OnlyNumber()
+        {
+            // arrange
+            var input = "114514";
+            int expect = 114514;
+
+			// act
+			var succeed = Utils.TryGetComicIdByLink(input, out int id);
+
+			// assert
+			Assert.IsTrue(succeed);
+			Assert.AreEqual(expect, id);
+        }
+
+        [TestMethod]
+        public void TryGetComicIdByLink_MCNumber()
+        {
+            // arrange
+            var input = "mc114514";
+            int expect = 114514;
+
+            // act
+            var succeed = Utils.TryGetComicIdByLink(input, out int id);
+
+			// assert
+			Assert.IsTrue(succeed);
+			Assert.AreEqual(expect, id);
+        }
+
+        [TestMethod]
+		public void TryGetComicIdByLink_DetailLink()
+        {
+			// arrange
+			var input = "https://manga.bilibili.com/detail/mc26550?from=manga_person";
+			var expect = 26550;
+
+			// act
+			var succeed = Utils.TryGetComicIdByLink(input, out int id);
+
+			// assert
+			Assert.IsTrue(succeed);
+            Assert.AreEqual(expect, id);
+        }
+
+        [TestMethod]
+		public void TryGetComicIdByLink_FromReadLink()
+        {
+			// arrange
+			var input = "https://manga.bilibili.com/mc29400/549932?from=manga_detail";
+			int expect = 29400;
+
+			// act
+			var succeed = Utils.TryGetComicIdByLink(input, out int id);
+
+			// assert
+			Assert.IsTrue(succeed);
+			Assert.AreEqual(expect, id);
+        }
+    }
 }
