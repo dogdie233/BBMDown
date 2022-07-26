@@ -40,15 +40,17 @@ Commands:
 
 - [x] 下载图片到本地
 - [x] 通过sessdata登录账号后下载
+- [x] 通过客户端扫描二维码登录账号
 
 将来实现
 
-- 通过客户端扫描二维码登录账号
 - 自动购买需要下载的章节
 - 自定义下载的位置
 - 自动重试
+- 更好的下载进度提示
 
 ## 致谢(排名不分先后)
 
 https://github.com/dotnet/command-line-api  
 https://github.com/SocialSisterYi/bilibili-API-collect
+https://github.com/codebude/QRCoder
