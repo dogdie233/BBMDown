@@ -52,5 +52,5 @@ Commands:
 ## 致谢(排名不分先后)
 
 https://github.com/dotnet/command-line-api  
-https://github.com/SocialSisterYi/bilibili-API-collect
+https://github.com/SocialSisterYi/bilibili-API-collect  
 https://github.com/codebude/QRCoder
