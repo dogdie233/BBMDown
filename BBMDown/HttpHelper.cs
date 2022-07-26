@@ -57,7 +57,7 @@ namespace BBMDown
 
         public static void SetCookie(string key, string value)
         {
-            Cookies.Add(new Cookie(key, value, "/", "manga.bilibili.com"));
+            Cookies.Add(new Cookie(key, value, "/", ".bilibili.com"));
         }
         public static void SetSessdata(string value) => SetCookie("SESSDATA", value);
     }

@@ -5,6 +5,11 @@
 ## 下载
 
 Github release: https://github.com/dogdie233/BBMDown/releases  
+dotnet nuget tool: https://www.nuget.org/packages/BBMDown
+
+```
+dotnet tool install --global BBMDown
+```
 
 ## 使用
 
@@ -39,6 +44,9 @@ Commands:
 将来实现
 
 - 通过客户端扫描二维码登录账号
+- 自动购买需要下载的章节
+- 自定义下载的位置
+- 自动重试
 
 ## 致谢(排名不分先后)
 
